@@ -1,8 +1,5 @@
 package noaland.sort;
 
-/**
- * Created by rpwang on 17/06/2018.
- */
 class TestCases{
     int[] input;
     int[] expected;
