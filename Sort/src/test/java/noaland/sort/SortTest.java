@@ -3,7 +3,6 @@ package noaland.sort;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
 
 public class SortTest {
     private int[] expectedResult = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -25,7 +24,11 @@ public class SortTest {
 
     @Test
     public void mergeSortCanSortListFromSmallToBig(){
-        assertEquals(true, true);
+        MergeSort mergeSort = new MergeSort();
+
+        for(TestCase testCase : testCases){
+            assertArrayEquals(testCase.message, testCase.expected, mergeSort.sort(testCase.input));
+        }
     }
 }
 
