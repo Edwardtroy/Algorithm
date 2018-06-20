@@ -1,10 +1,12 @@
 package noaland.TestCases;
 
-public class TestCasesBuilder {
-    public TestCasesRunner Using(TestCase[] testCases) {
-        Object[] outputs;
-        outputs = new Object[testCases.length];
+import static java.lang.reflect.Array.newInstance;
 
-        return new TestCasesRunner(testCases, outputs);
+public class TestCasesBuilder <T> {
+    public TestCasesRunner <T> Using(TestCase[] testCases){
+//        noinspection unchecked
+        T[] outputs = (T[])newInstance(testCases[0].expected.getClass(), testCases.length);
+
+        return new TestCasesRunner<>(testCases, outputs);
     }
 }

@@ -4,13 +4,13 @@ package noaland.sort;
 import static java.lang.System.arraycopy;
 
 public class MergeSort {
-    private int[] sortList;
-    private int[] mergeListInProgress;
+    private Integer[] sortList;
+    private Integer[] mergeListInProgress;
 
-    public int[] sort(int inputArr[]) {
+    public Integer[] sort(Integer[] inputArr) {
         this.sortList = inputArr;
         int length = inputArr.length;
-        this.mergeListInProgress = new int[length];
+        this.mergeListInProgress = new Integer[length];
         mergeSort(0, length - 1);
 
         return sortList;

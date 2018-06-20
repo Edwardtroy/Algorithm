@@ -5,11 +5,11 @@ import java.lang.reflect.Method;
 
 import static org.junit.Assert.assertArrayEquals;
 
-public class TestCasesRunner {
+public class TestCasesRunner<T> {
     private final TestCase[] testCasesInUse;
-    private final Object[] outputs;
+    private final T[] outputs;
 
-    TestCasesRunner(TestCase[] testCasesInUse, Object[] outputs) {
+    TestCasesRunner(TestCase[] testCasesInUse, T[] outputs) {
         this.testCasesInUse = testCasesInUse;
         this.outputs = outputs;
     }
@@ -31,7 +31,7 @@ public class TestCasesRunner {
     private void runMethodAndSetOutput(Class<?> testClass, Method method) throws Exception{
         for(int i = 0; i < testCasesInUse.length; i++){
             Object input = testCasesInUse[i].input;
-            outputs[i] = method.invoke(testClass.newInstance(), input);
+            outputs[i] = (T) method.invoke(testClass.newInstance(), input);
         }
     }
 }

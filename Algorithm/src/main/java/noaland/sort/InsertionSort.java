@@ -1,7 +1,7 @@
 package noaland.sort;
 
 public class InsertionSort {
-    public int[] sort(int[] sortList) {
+    public Integer[] sort(Integer[] sortList) {
         for(int unsortIndex = 1; unsortIndex < sortList.length; unsortIndex++){
             int valueWaitToSort = sortList[unsortIndex];
 
