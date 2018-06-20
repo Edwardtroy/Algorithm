@@ -1,4 +1,4 @@
-package noaland.sort;
+package noaland.TestCases;
 
 import org.junit.Test;
 import org.junit.runner.Description;

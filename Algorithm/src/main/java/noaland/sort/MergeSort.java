@@ -3,11 +3,11 @@ package noaland.sort;
 
 import static java.lang.System.arraycopy;
 
-class MergeSort {
+public class MergeSort {
     private int[] sortList;
     private int[] mergeListInProgress;
 
-    int[] sort(int inputArr[]) {
+    public int[] sort(int inputArr[]) {
         this.sortList = inputArr;
         int length = inputArr.length;
         this.mergeListInProgress = new int[length];

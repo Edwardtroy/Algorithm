@@ -1,5 +1,7 @@
 package noaland.sort;
 
+import noaland.TestCases.TestCase;
+import noaland.TestCases.TestCasesBuilder;
 import org.junit.Test;
 
 public class SortTest {
