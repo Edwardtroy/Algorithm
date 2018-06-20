@@ -31,7 +31,7 @@ public class TestCasesRunner<T> {
 
     private void runMethodAndSetOutput(Class<?> testClass, Method method) throws Exception{
         for(int i = 0; i < testCasesInUse.length; i++){
-            Object input = testCasesInUse[i].input;
+            Object[] input = testCasesInUse[i].input;
             outputs[i] = (T) method.invoke(testClass.newInstance(), input);
         }
     }
