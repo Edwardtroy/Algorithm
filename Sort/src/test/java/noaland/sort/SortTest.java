@@ -15,7 +15,7 @@ public class SortTest {
     public void insertionSortCanSortListFromSmallToBig() throws Exception{
         String testMethodName = "sort";
 
-        new UsingTestCases()
+        new TestCasesBuilder()
                 .Using(testCases)
                 .Running(
                     InsertionSort.class, testMethodName, int[].class
@@ -27,10 +27,10 @@ public class SortTest {
     public void mergeSortCanSortListFromSmallToBig() throws Exception {
         String testMethodName = "sort";
 
-        new UsingTestCases()
+        new TestCasesBuilder()
                 .Using(testCases)
                 .Running(
-                        MergeSort.class, testMethodName, int[].class
+                    MergeSort.class, testMethodName, int[].class
                 )
                 .DoAssert();
     }

@@ -4,18 +4,18 @@ import java.lang.reflect.Method;
 
 import static org.junit.Assert.assertArrayEquals;
 
-class UsingTestCases {
+class TestCasesBuilder {
     private static TestCase[] testCasesInUse;
     private Object[] outputs;
 
-    UsingTestCases Using(TestCase[] testCases) {
+    TestCasesBuilder Using(TestCase[] testCases) {
         testCasesInUse = testCases;
         outputs = new Object[testCasesInUse.length];
 
         return this;
     }
 
-    UsingTestCases Running(Class<?> testClass, String methodName, Class<?>... parameterTypes) throws Exception{
+    TestCasesBuilder Running(Class<?> testClass, String methodName, Class<?>... parameterTypes) throws Exception{
         Method method = testClass.getDeclaredMethod(methodName, parameterTypes);
         runMethodAndSetOutput(testClass, method);
 
