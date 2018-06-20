@@ -21,10 +21,11 @@ public class TestCasesRunner<T> {
         return this;
     }
 
+    //TODO: assertArrayEquals need to be change to another way.
     public void DoAssert(){
         for(int i = 0; i < outputs.length; i++){
             TestCase testCase = testCasesInUse[i];
-            assertArrayEquals(testCase.message, testCase.expected, testCase.expected.getClass().cast(outputs[i]));
+            assertArrayEquals(testCase.message, new Object[]{testCase.expected}, new Object[]{testCase.expected.getClass().cast(outputs[i])});
         }
     }
 
