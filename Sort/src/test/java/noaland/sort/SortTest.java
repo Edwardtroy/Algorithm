@@ -20,7 +20,7 @@ public class SortTest {
                 .Running(
                     InsertionSort.class, testMethodName, int[].class
                 )
-                .ShouldEquals(int[].class);
+                .DoAssert();
     }
 
     @Test
@@ -32,7 +32,7 @@ public class SortTest {
                 .Running(
                         MergeSort.class, testMethodName, int[].class
                 )
-                .ShouldEquals(int[].class);
+                .DoAssert();
     }
 }
 

@@ -23,7 +23,7 @@ class UsingTestCases {
         return this;
     }
 
-    void ShouldEquals(Class resultType){
+    void DoAssert(){
         for(int i = 0; i < outputs.length; i++){
             TestCase testCase = testCasesInUse[i];
             assertArrayEquals(testCase.message, testCase.expected, testCase.expected.getClass().cast(outputs[i]));
