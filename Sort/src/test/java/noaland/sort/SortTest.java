@@ -2,8 +2,6 @@ package noaland.sort;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertArrayEquals;
-
 public class SortTest {
     private int[] expectedResult = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
 
@@ -14,21 +12,27 @@ public class SortTest {
     };
 
     @Test
-    public void insertionSortCanSortListFromSmallToBig(){
-        InsertionSort insertionSort = new InsertionSort();
+    public void insertionSortCanSortListFromSmallToBig() throws Exception{
+        String testMethodName = "sort";
 
-        for(TestCase testCase : testCases){
-            assertArrayEquals(testCase.message, testCase.expected, insertionSort.sort(testCase.input));
-        }
+        new UsingTestCases()
+                .Using(testCases)
+                .Running(
+                    InsertionSort.class, testMethodName, int[].class
+                )
+                .ShouldEquals(int[].class);
     }
 
     @Test
-    public void mergeSortCanSortListFromSmallToBig(){
-        MergeSort mergeSort = new MergeSort();
+    public void mergeSortCanSortListFromSmallToBig() throws Exception {
+        String testMethodName = "sort";
 
-        for(TestCase testCase : testCases){
-            assertArrayEquals(testCase.message, testCase.expected, mergeSort.sort(testCase.input));
-        }
+        new UsingTestCases()
+                .Using(testCases)
+                .Running(
+                        MergeSort.class, testMethodName, int[].class
+                )
+                .ShouldEquals(int[].class);
     }
 }
 
