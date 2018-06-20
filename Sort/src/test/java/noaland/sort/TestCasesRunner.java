@@ -5,11 +5,11 @@ import java.lang.reflect.Method;
 
 import static org.junit.Assert.assertArrayEquals;
 
-public class TestCasesRunner {
+class TestCasesRunner {
     private final TestCase[] testCasesInUse;
     private final Object[] outputs;
 
-    public TestCasesRunner(TestCase[] testCasesInUse, Object[] outputs) {
+    TestCasesRunner(TestCase[] testCasesInUse, Object[] outputs) {
         this.testCasesInUse = testCasesInUse;
         this.outputs = outputs;
     }
