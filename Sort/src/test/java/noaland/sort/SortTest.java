@@ -27,7 +27,7 @@ public class SortTest {
     public void mergeSortCanSortListFromSmallToBig() throws Exception {
         String testMethodName = "sort";
 
-        new TestCasesBuilder()
+         new TestCasesBuilder()
                 .Using(testCases)
                 .Running(
                     MergeSort.class, testMethodName, int[].class
