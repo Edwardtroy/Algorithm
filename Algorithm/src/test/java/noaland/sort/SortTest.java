@@ -45,7 +45,7 @@ public class SortTest {
         new TestCasesBuilder()
                 .using(testCases)
                 .running(
-                        MergeSort.class, testMethodName
+                    MergeSort.class, testMethodName
                 )
                 .doAssert();
     }
