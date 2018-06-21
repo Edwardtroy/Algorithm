@@ -8,7 +8,7 @@ public class TestCaseInput{
         this.inputs = inputs;
     }
 
-    public Object[] getInputs() {
+    Object[] getInputs() {
         return inputs;
     }
 }

@@ -14,15 +14,26 @@ public class TestCasesRunner<T> {
         this.outputs = outputs;
     }
 
-    public TestCasesRunner Running(Class<?> testClass, String methodName, Class<?>... parameterTypes) throws Exception{
-        Method method = testClass.getDeclaredMethod(methodName, parameterTypes);
+    public TestCasesRunner running(Class<?> testClass, String methodName, Class<?>... parameterTypeList) throws Exception{
+        Object[] input = testCasesInUse[0].input;
+        Class<?>[] parameterTypes = new Class[input.length];
+
+        if(parameterTypeList.length > 0){
+            parameterTypes = parameterTypeList;
+        }else{
+            for(int i = 0; i < input.length; i++){
+                parameterTypes[i] = input[i].getClass();
+            }
+        }
+
+        Method method = testClass.getDeclaredMethod(methodName, (Class[]) parameterTypes);
         runMethodAndSetOutput(testClass, method);
 
         return this;
     }
 
     //TODO: assertArrayEquals need to be change to another way.
-    public void DoAssert(){
+    public void doAssert(){
         for(int i = 0; i < outputs.length; i++){
             TestCase testCase = testCasesInUse[i];
             assertArrayEquals(testCase.message, new Object[]{testCase.expected}, new Object[]{testCase.expected.getClass().cast(outputs[i])});
